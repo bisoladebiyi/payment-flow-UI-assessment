@@ -1,0 +1,76 @@
+@import "./abstracts/mixins";
+
+// receipt 
+.receipt {
+  width: 100%;
+  background: #fff;
+  box-shadow: 0px 10px 15px rgba(33, 30, 67, 0.08);
+  border-radius: 10px;
+  margin-top: 30px;
+  overflow: hidden;
+  padding-bottom: 38px;
+  .price{
+    font-weight: 700;
+    color: #4E598C;
+}
+  &_header {
+    background: #2F80ED;
+    padding: 20px 70px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 600;
+    @include respond("tab-port") {
+      padding: 20px 20px;
+      font-size: 15px;
+    }
+  }
+  &_content{
+    padding: 60px 70px 10px;
+    @include respond("tab-port") {
+      padding: 40px 20px 10px;
+    }
+    border-bottom:  1px solid #817E9E;
+    div {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        font-size: 18px;
+        color: #4E598C;
+        @include respond("tab-port") {
+          font-size: 15px;
+        }
+    }
+  }
+  &_total {
+    font-size: 18px;
+    border: 1px solid #817E9E;
+    border-radius: 5px;
+    margin: 40px 70px 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 17px;
+    color: #817E9E;
+    @include respond("tab-port") {
+      margin: 40px 20px 0px;
+      font-size: 15px;
+    }
+  }
+  
+}
+.bottomButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 50px;
+    @include respond("tab-land") {
+      width: 100%;
+    }
+    .cancel {
+        all: unset;
+        color: #4E598C;
+        font-weight: bolder;
+        font-size: 17px;
+    }
+}

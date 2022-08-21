@@ -1,0 +1,37 @@
+@import "./abstracts/mixins";
+
+// form
+.form {
+  margin-top: 60px;
+  @include respond("desktop") {
+    margin-top: 50px;
+  }
+  @include respond("tab-land") {
+    margin-top: 35px;
+  }
+  //   grided fields
+  .bottomFields {
+    display: grid;
+    grid-template-columns: 55% 18% 15%;
+    grid-column-gap: 6%;
+    @include respond("tab-port") {
+      display: block;
+    }
+  }
+  //   form buttons
+  .bottomButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-top: 50px;
+    @include respond("tab-land") {
+      width: 100%;
+    }
+    .cancel {
+      all: unset;
+      color: #4e598c;
+      font-weight: bolder;
+      font-size: 17px;
+    }
+  }
+}

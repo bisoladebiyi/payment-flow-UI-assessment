@@ -1,0 +1,100 @@
+@import "./abstracts/mixins";
+
+@font-face {
+  font-family: Product light;
+  src: url(../font/ProductSans-Light.ttf);
+}
+@font-face {
+  font-family: Product bold;
+  src: url(../font/ProductSans-Bold.ttf);
+}
+.wrapper {
+  height: 95vh;
+  display: grid;
+  place-items: center;
+  // popup 
+  .popup {
+    width: 55%;
+    padding: 65px 120px;
+    box-shadow: 0px 6px 10px rgba(33, 30, 67, 0.08);
+    border-radius: 10px;
+    background: #fff;
+    @include respond("desktop") {
+      width: 80%;
+      padding: 65px 80px;
+    }
+    @include respond("tab-land") {
+      width: 90%;
+      padding: 55px 70px;
+    }
+    @include respond("tab-port") {
+      width: 90%;
+      padding: 55px 20px;
+    }
+    .imgWrapper {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+      .img {
+        box-shadow: 0px 6px 10px rgba(33, 30, 67, 0.08);
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+      }
+    }
+    p:nth-child(2) {
+      font-family: Product bold;
+      font-size: 48px;
+      color: #4e598c;
+      margin-bottom: 30px;
+      @include respond("tab-land") {
+        font-size: 40px;
+      }
+      @include respond("tab-port") {
+        font-size: 35px;
+        text-align: center;
+      }
+      @include respond("mobile") {
+        font-size: 28px;
+        text-align: center;
+      }
+    }
+    p:nth-child(3) {
+      color: #4f4f4f;
+      font-size: 18px;
+      font-family: Product light;
+      font-weight: 700;
+      margin-bottom: 35px;
+      line-height: 27px;
+      @include respond("tab-port") {
+        font-size: 15px;
+      }
+    }
+    a {
+      background: linear-gradient(180deg, #f2c94c 0%, #f2994a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      position: relative;
+      font-size: 18px;
+      text-decoration: none;
+      @include respond("tab-port") {
+        font-size: 15px;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px;
+        background: linear-gradient(180deg, #f2c94c 0%, #f2994a 100%);
+        width: 100%;
+        height: 2px;
+        left: 0;
+        border-radius: 4px;
+      }
+    }
+  }
+}
